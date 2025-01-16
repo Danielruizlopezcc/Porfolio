@@ -14,7 +14,7 @@ export default function Navigation() {
             className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
-            Portfolio
+            Porfolio
           </motion.span>
           <div className="flex items-center gap-6">
             {['Experiencia', 'Formación', 'Proyectos'].map((item) => (
