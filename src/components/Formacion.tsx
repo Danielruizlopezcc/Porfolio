@@ -6,7 +6,6 @@ import ETSIImage from '../assets/ETSIImage.jpg?url';
 import CambridgeImage from '../assets/CambridgeImage.jpg?url';
 import LSImage from '../assets/LSImage.jpg?url';
 
-
 export default function AcademicFormation() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
@@ -54,7 +53,7 @@ export default function AcademicFormation() {
     const lastUpdated = "16/01/2025";
 
   return (
-    <section id="Formación" className="py-20 px-4 bg-slate-800/50">
+    <section id="Formación" className="py-20 px-4 sm:px-6 md:px-8 bg-slate-800/50">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="flex items-center gap-3 mb-8"
@@ -62,8 +61,8 @@ export default function AcademicFormation() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <GraduationCap className="text-emerald-400" size={32} />
-          <h2 className="text-2xl font-bold">Formación Académica</h2>
+          <GraduationCap className="text-emerald-400 w-6 h-6 sm:w-8 sm:h-8" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Formación Académica</h2>
         </motion.div>
 
         {/* Última actualización */}
@@ -73,7 +72,7 @@ export default function AcademicFormation() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <p className="absolute text-sm text-emerald-400 bg-slate-900 px-4 py-1 rounded-md">
+          <p className="absolute text-sm sm:text-base text-emerald-400 bg-slate-900 px-4 py-1 rounded-md">
             Última actualización: {lastUpdated}
           </p>
           <div className="absolute w-1 bg-emerald-400 h-full transform"></div>
@@ -86,43 +85,39 @@ export default function AcademicFormation() {
           {sortedFormations.map((formation, index) => (
             <motion.div
               key={index}
-              className={`relative flex items-center gap-4 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} w-full`}
+              className={`relative flex items-center gap-4 ${index % 2 === 0 ? 'flex-col sm:flex-row' : 'flex-col sm:flex-row-reverse'} w-full`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
               {/* Cuadrado con Imagen */}
-                <div
-                    className={`relative w-58 h-48 rounded-md overflow-hidden shadow-lg flex-shrink-0 border-2 border-emerald-400 transform group ${
-                    index % 2 === 0 ? '-translate-x-[calc(100%-500px)]' : 'translate-x-[calc(100%-500px)]'
-                    }`}
-                    onMouseEnter={() => setHoveredIndex(index)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                >
-                    {/* Imagen */}
-                    <img 
-                    src={formation.image} 
-                    alt={formation.title} 
-                    className="w-full h-full object-cover group-hover:opacity-30 transition-opacity duration-300"
-                    />
+              <div
+                className={`relative w-full sm:w-1/2 md:w-1/3 h-48 rounded-md overflow-hidden shadow-lg flex-shrink-0 border-2 border-emerald-400 transform group`}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {/* Imagen */}
+                <img 
+                  src={formation.image} 
+                  alt={formation.title} 
+                  className="w-full h-full object-cover group-hover:opacity-30 transition-opacity duration-300"
+                />
 
-                    {/* Texto dentro del div */}
-                    <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={hoveredIndex === index ? { opacity: 1 } : { opacity: 0 }}
-                    className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center text-white p-4 transition-opacity duration-300"
-                    >
-                    <h3 className="font-bold text-lg text-center">{formation.title}</h3>
-                    <p className="text-sm text-slate-400 text-center">{formation.date}</p>
-                    <p className="text-sm text-center"><strong>{formation.institution}</strong></p>
-                    </motion.div>
-                </div>
+                {/* Texto dentro del div */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={hoveredIndex === index ? { opacity: 1 } : { opacity: 0 }}
+                  className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center text-white p-4 transition-opacity duration-300"
+                >
+                  <h3 className="font-bold text-lg sm:text-xl text-center">{formation.title}</h3>
+                  <p className="text-sm sm:text-base text-slate-400 text-center">{formation.date}</p>
+                  <p className="text-sm sm:text-base text-center"><strong>{formation.institution}</strong></p>
                 </motion.div>
-            ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
-  
-  

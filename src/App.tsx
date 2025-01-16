@@ -26,7 +26,7 @@ export default function App() {
       {/* Pie de página */}
       <footer className="bg-slate-900 py-8 px-4">
         <div className="max-w-6xl mx-auto text-center text-slate-400">
-          <p>© 2025 Daniel Ruiz López. Todos los derechos reservados.</p>
+          <p className="text-sm sm:text-base">© 2025 Daniel Ruiz López. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>

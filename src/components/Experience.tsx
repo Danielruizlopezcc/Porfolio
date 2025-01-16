@@ -25,7 +25,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="Experiencia" className="py-20 px-4">
+    <section id="Experiencia" className="py-20 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="flex items-center gap-3 mb-12"
@@ -33,8 +33,8 @@ export default function Experience() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <Briefcase className="text-emerald-400" />
-          <h2 className="text-2xl font-bold">Experiencia Laboral</h2>
+          <Briefcase className="text-emerald-400 w-6 h-6 sm:w-8 sm:h-8" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Experiencia Laboral</h2>
         </motion.div>
         
         <VerticalTimeline lineColor="#10b981">
@@ -51,8 +51,8 @@ export default function Experience() {
             >
               <div className="flex justify-between items-center">
                 <div>
-                  <h3 className="font-bold text-lg">{job.title}</h3>
-                  <h4 className="text-emerald-400">{job.company}</h4>
+                  <h3 className="font-bold text-lg sm:text-xl md:text-2xl">{job.title}</h3>
+                  <h4 className="text-emerald-400 text-sm sm:text-base md:text-lg">{job.company}</h4>
                 </div>
                 <button
                   onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
@@ -69,7 +69,7 @@ export default function Experience() {
                     exit={{ opacity: 0, y: -5 }}
                     className="p-3 bg-slate-700 rounded-md mt-2"
                   >
-                    <p className="text-slate-300 leading-tight">{job.description}</p>
+                    <p className="text-slate-300 leading-tight text-sm sm:text-base">{job.description}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
