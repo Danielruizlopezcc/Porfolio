@@ -54,7 +54,7 @@ export default function AcademicFormation() {
     const lastUpdated = "16/01/2025";
 
   return (
-    <section id="Formacion" className="py-20 px-4 bg-slate-800/50">
+    <section id="Formación" className="py-20 px-4 bg-slate-800/50">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="flex items-center gap-3 mb-8"

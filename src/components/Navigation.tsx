@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Moon } from 'lucide-react';
 
 export default function Navigation() {
   return (
@@ -18,7 +17,7 @@ export default function Navigation() {
             Portfolio
           </motion.span>
           <div className="flex items-center gap-6">
-            {['Experiencia', 'Proyectos', 'Formacion'].map((item) => (
+            {['Experiencia', 'Formación', 'Proyectos'].map((item) => (
               <motion.a 
                 key={item}
                 href={`#${item}`} 
@@ -28,12 +27,6 @@ export default function Navigation() {
                 {item}
               </motion.a>
             ))}
-            <motion.button 
-              className="p-2 hover:bg-slate-800 rounded-full transition-colors"
-              whileHover={{ rotate: 180 }}
-            >
-              <Moon size={20} />
-            </motion.button>
           </div>
         </div>
       </div>

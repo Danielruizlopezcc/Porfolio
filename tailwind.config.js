@@ -4,5 +4,6 @@ export default {
   theme: {
     extend: {},
   },
+  darkMode: 'class', // Este es el paso más importante
   plugins: [],
 };

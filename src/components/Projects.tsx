@@ -46,7 +46,6 @@ export default function Projects() {
       title: "PetClinic",
       description: "Proyecto para la asignatura de Proceso Software y Gestion II, es un pequeño proyecto basado en la aplicación de Spring PetClinic para enseñar arquitecturas SPA",
       tech: ["Java", "JavaScript", "CSS", "API Rest", "React", "Spring Boot", "JWT"],
-      github: "https://github.com/gii-is-psg2/psg2-2324-g1-12",
       preview: "https://psg2-2324-g1-12.wn.r.appspot.com/",
       image: PetClinicImage
     },
@@ -112,17 +111,19 @@ export default function Projects() {
                 ))}
               </div>
               <div className="flex gap-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.263.793-.583 0-.287-.01-1.05-.016-2.06-3.338.724-4.042-1.613-4.042-1.613-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.204.084 1.837 1.263 1.837 1.263 1.07 1.833 2.807 1.303 3.492.997.108-.775.417-1.303.758-1.603-2.665-.303-5.467-1.333-5.467-5.933 0-1.313.468-2.387 1.237-3.227-.123-.304-.535-1.526.117-3.177 0 0 1.01-.324 3.3 1.23.957-.267 1.983-.4 3.003-.405 1.02.005 2.047.138 3.005.405 2.29-1.554 3.3-1.23 3.3-1.23.653 1.651.241 2.873.118 3.177.77.84 1.237 1.914 1.237 3.227 0 4.61-2.807 5.625-5.479 5.922.43.37.814 1.102.814 2.22 0 1.606-.015 2.897-.015 3.293 0 .323.192.7.798.582C20.565 22.297 24 17.798 24 12.5 24 5.87 18.63.5 12 .5z" />
-                  </svg>
-                  <span>GitHub</span>
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.263.793-.583 0-.287-.01-1.05-.016-2.06-3.338.724-4.042-1.613-4.042-1.613-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.204.084 1.837 1.263 1.837 1.263 1.07 1.833 2.807 1.303 3.492.997.108-.775.417-1.303.758-1.603-2.665-.303-5.467-1.333-5.467-5.933 0-1.313.468-2.387 1.237-3.227-.123-.304-.535-1.526.117-3.177 0 0 1.01-.324 3.3 1.23.957-.267 1.983-.4 3.003-.405 1.02.005 2.047.138 3.005.405 2.29-1.554 3.3-1.23 3.3-1.23.653 1.651.241 2.873.118 3.177.77.84 1.237 1.914 1.237 3.227 0 4.61-2.807 5.625-5.479 5.922.43.37.814 1.102.814 2.22 0 1.606-.015 2.897-.015 3.293 0 .323.192.7.798.582C20.565 22.297 24 17.798 24 12.5 24 5.87 18.63.5 12 .5z" />
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
+                )}
                 {project.preview && (
                   <a
                     href={project.preview}
